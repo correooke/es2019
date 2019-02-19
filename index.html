@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="index.js"></script>
+    <title>ES 2019</title>
+    <style>
+        .card {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">
+            ECMAScript - ES 2019
+        </h1>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Symbol Description Accessor
+                </h4>
+                <pre class="card-text"><code>
+                    const desc = 'my symbol'
+                    const sym = Symbol(desc)
+                
+                    console.log(sym)
+                    console.log(sym.description)
+                </code></pre>
+                <button class="btn btn-primary" onclick=symbol()>Execute</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Function “toString” Revision
+                </h4>
+                <pre class="card-text"><code>
+                    function myFunction() {
+                        // El comentario permanece
+                    }
+                
+                    console.log(myFunction.toString())
+                </code></pre>
+                <button class="btn btn-primary" onclick=logOfFunction()>Execute</button>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Optional Catch Binding
+                </h4>
+                <pre class="card-text"><code>
+                    try {
+                        throw new Error('Hey!')
+                    } catch {
+                        console.log("Error!")
+                    }
+                </code></pre>
+                <button class="btn btn-primary" onclick=catchWithNoValue()>Execute</button>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Left and right trim of whitespace to strings
+                </h4>
+                <pre class="card-text"><code>
+                    const string = '    spaces    ';
+
+                    console.log('trimStart', JSON.stringify(string.trimStart()))
+                    console.log('trimEnd', JSON.stringify(string.trimEnd()))
+                    console.log('trim', JSON.stringify(string.trim()))  
+                </code></pre>
+                <button class="btn btn-primary" onclick=trimming()>Execute</button>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Generar un objeto desde sus "entries"
+                </h4>
+                <pre class="card-text"><code>
+                    const obj = {
+                        key1: 'Value1',
+                        key2: 'value2',
+                        key3: 'value3'
+                    }
+                
+                    const entries = Object.entries(obj)
+                
+                    const originalObj = Object.fromEntries(entries) 
+                </code></pre>
+                <button class="btn btn-primary" onclick=entries_toObj()>Execute</button>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    FlatMap on arrays
+                </h4>
+                <pre class="card-text"><code>
+                    const res = [1, 2, 3, 4].flatMap(x => [x, x*2])
+
+                    console.log(res)
+                </code></pre>
+                <button class="btn btn-primary" onclick=flatMapArray_es2019()>Execute</button>
+            </div>
+        </div>        
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    Flatten on arrays
+                </h4>
+                <pre class="card-text"><code>
+
+                    const arr = [1, 2, 3, [4, 5, 6, [7, 8, 9, [10, 11, 12]]]]
+                    console.log(arr.flat().flat())
+                    console.log(arr.flat(Infinity))
+                </code></pre>
+                <button class="btn btn-primary" onclick=flatArray_es2019_infinity()>Execute</button>
+            </div>
+        </div>        
+      
+    </div>
+</body>
+</html>
